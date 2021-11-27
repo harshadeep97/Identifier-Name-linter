@@ -12,7 +12,7 @@ out2=sys.argv[5]
 
 
 Language.build_library(
-  # Store the library in the `buid` directory
+  # Store the library in the `buid` direry
   'build/my-languages.so',
 
   # Include one or more languages
