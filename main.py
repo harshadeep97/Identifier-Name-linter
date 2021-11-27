@@ -66,7 +66,7 @@ def walk(root):
         return
     except:
         pass
-walk('src_code')
+walk(dir_name)
 
 def readNodes(parser,src_code):
   nodes_list = []
@@ -116,6 +116,7 @@ elif ext == '.go' and name=='go':
            identifiers = identifiers+'Identifier Name: '+line[i.start_point[1]:i.end_point[1]]\
                          +' Rows: '+str(i.start_point[0])+'-'+str(i.end_point[0])\
                          +' Columns: '+str(i.start_point[1])+'-'+str(i.end_point[1]) +'\n'
+
 elif ext == '.js' and name=='javascript':
     for js in js_files:
         with open(js) as f:
@@ -132,7 +133,8 @@ elif ext == '.js' and name=='javascript':
                          +' Rows: '+str(i.start_point[0])+'-'+str(i.end_point[0])\
                          +' Columns: '+str(i.start_point[1])+'-'+str(i.end_point[1]) +'\n'
 
-if ext == '.rb' and name=='ruby':
+
+elif ext == '.rb' and name=='ruby':
     for rb in rb_files:
         with open(rb) as f:
             code = f.read()
@@ -151,6 +153,3 @@ if ext == '.rb' and name=='ruby':
 text_file = open(out1, "w")
 n = text_file.write(identifiers)
 text_file.close()
-
-
-
